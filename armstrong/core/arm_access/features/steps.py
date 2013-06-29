@@ -8,7 +8,8 @@ import random
 import sys
 import datetime as dt
 
-from armstrong.core.arm_access.tests.arm_access_support.models import Content
+from armstrong.core.arm_access.tests.arm_access_support.models import (
+        ArmAccessSupportContent)
 from armstrong.core.arm_access.models import *
 from armstrong.core.arm_access.paywalls.subscription import (
         SubscriptionPaywall, SubscriptionChecker)
@@ -31,14 +32,14 @@ def setup_scenario(scenario):
 
 @after.each_scenario
 def teardown_scenario(scenario):
-    Content.objects.all().delete()
+    ArmAccessSupportContent.objects.all().delete()
     AccessMembership.objects.all().delete()
     Assignment.objects.all().delete()
 
 
 @step(u'A piece of content exists')
 def a_piece_of_content_exists(step):
-    world.content = Content.objects.create(name="The content")
+    world.content = ArmAccessSupportContent.objects.create(name="The content")
     world.content.access = []
 
 
