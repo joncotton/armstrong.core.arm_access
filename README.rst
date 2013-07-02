@@ -85,7 +85,7 @@ SubscriptionPaywall takes an additional argument ``permission_denied`` that
 determines what action to take on failure. The argument must be a callable that
 takes one argument, a TemplateResponse, and returns a Response object
 representing what to do on access denied. For example::
-    
+
     # to redirect to a new url entirely
     from armstrong.core.arm_access.paywalls import redirect_on_deny
     redirecting_paywall = SubscriptionPaywall(
@@ -109,24 +109,13 @@ implement it, it would be an excellent candidate for inclusion in this package.
 
 Installation & Configuration
 ----------------------------
-You can install the latest release of ``armstrong.core.arm_access`` using
-`pip`_:
+#. ``pip install armstrong.core.arm_access``
 
-::
+#. Add ``armstrong.core.arm_access`` to your ``INSTALLED_APPS``
 
-    pip install armstrong.core.arm_access
+#. Run either ``syncdb`` or ``migrate`` if you are using `South`_
 
-Make sure to add ``armstrong.core.arm_access`` to your ``INSTALLED_APPS``.  You
-can add this however you like.  This works as a copy-and-paste solution:
 
-::
-
-	INSTALLED_APPS += ["armstrong.core.arm_access", ]
-
-Once installed, you have to run either ``syncdb``, or ``migrate`` if you are
-using `South`_.
-
-.. _pip: http://www.pip-installer.org/
 .. _South: http://south.aeracode.org/
 
 
@@ -148,8 +137,8 @@ State of Project
 ----------------
 Armstrong is an open-source news platform that is freely available to any
 organization.  It is the result of a collaboration between the `Texas Tribune`_
-and `Bay Citizen`_, and a grant from the `John S. and James L. Knight
-Foundation`_.
+and `The Center for Investigative Reporting`_ and a grant from the
+`John S. and James L. Knight Foundation`_.
 
 To follow development, be sure to join the `Google Group`_.
 
@@ -157,7 +146,7 @@ To follow development, be sure to join the `Google Group`_.
 probably looking for that.
 
 .. _Texas Tribune: http://www.texastribune.org/
-.. _Bay Citizen: http://www.baycitizen.org/
+.. _The Center for Investigative Reporting: http://cironline.org/
 .. _John S. and James L. Knight Foundation: http://www.knightfoundation.org/
 .. _Google Group: http://groups.google.com/group/armstrongcms
 .. _Armstrong: http://www.armstrongcms.org/
@@ -165,7 +154,7 @@ probably looking for that.
 
 License
 -------
-Copyright 2011 Bay Citizen and Texas Tribune
+Copyright 2011-2013 Texas Tribune and The Center for Investigative Reporting
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
